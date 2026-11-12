@@ -21,7 +21,7 @@ body {
 }
 
 .container {
-    max-width: 1160px;
+    max-width: 1200px;
     margin: auto;
 }
 
@@ -29,7 +29,7 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     gap: 25px;
     margin-bottom: 35px;
 }
@@ -49,57 +49,57 @@ h1 {
 
 .subtitle {
     color: #888;
-    font-size: 14px;
+    font-size: 15px;
     margin-top: 12px;
 }
 
 .document-link {
     display: inline-block;
-    padding: 13px 19px;
-    border: 1px solid #333;
-    border-radius: 5px;
-    color: #222;
+    padding: 17px 25px;
+    background: #222;
+    color: white;
+    border: 1px solid #222;
+    border-radius: 6px;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 15px;
+    font-weight: 600;
     white-space: nowrap;
     transition: all .2s;
 }
 
 .document-link:hover {
-    background: #222;
-    color: white;
+    background: white;
+    color: #222;
 }
 
-/* Intro */
+/* Introduction */
 .intro {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 22px 0;
-    margin-bottom: 28px;
+    margin-bottom: 30px;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
     color: #777;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .intro strong {
     color: #222;
-    font-size: 14px;
 }
 
-/* Projects */
+/* Project Grid */
 .grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
+    gap: 30px 26px;
 }
 
 .project {
     background: white;
-    border-radius: 9px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 2px 12px rgba(0,0,0,.045);
+    box-shadow: 0 2px 12px rgba(0,0,0,.05);
     transition: transform .25s, box-shadow .25s;
 }
 
@@ -108,33 +108,40 @@ h1 {
     box-shadow: 0 8px 22px rgba(0,0,0,.09);
 }
 
+/* Images: full width, original ratio */
 .image-wrap {
-    height: 350px;
+    width: 100%;
     background: #eeedea;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 12px;
+    overflow: hidden;
+}
+
+.image-wrap a {
+    display: block;
+    cursor: zoom-in;
 }
 
 .image-wrap img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
+    display: block;
+    width: 100%;
     height: auto;
     object-fit: contain;
-    display: block;
+    transition: opacity .25s;
 }
 
+.image-wrap a:hover img {
+    opacity: .92;
+}
+
+/* Project Information */
 .project-info {
-    padding: 19px 21px 21px;
+    padding: 24px 25px 25px;
 }
 
 .project-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 13px;
 }
 
 .number {
@@ -146,24 +153,47 @@ h1 {
 .category {
     font-size: 11px;
     color: #888;
+    letter-spacing: 1px;
 }
 
 .project h2 {
-    font-size: 20px;
+    font-size: 23px;
     font-weight: 600;
-    margin-bottom: 7px;
+    margin-bottom: 14px;
 }
 
-.project p {
-    font-size: 13px;
+.description {
+    color: #666;
+    font-size: 14px;
+    line-height: 2;
+    text-align: justify;
+}
+
+.description strong {
+    color: #222;
+    font-weight: 700;
+}
+
+.video-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #222;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid #222;
+    padding-bottom: 5px;
+}
+
+.video-link:hover {
     color: #888;
-    line-height: 1.6;
+    border-color: #888;
 }
 
 /* Footer */
 .footer {
-    margin-top: 38px;
-    padding-top: 20px;
+    margin-top: 45px;
+    padding-top: 22px;
     border-top: 1px solid #ddd;
     display: flex;
     justify-content: space-between;
@@ -173,7 +203,7 @@ h1 {
 .back {
     color: #444;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .back:hover {
@@ -183,10 +213,11 @@ h1 {
 .footer-note {
     color: #aaa;
     font-size: 11px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
-@media (max-width: 700px) {
+/* Responsive */
+@media (max-width: 750px) {
     body {
         padding: 35px 18px;
     }
@@ -197,20 +228,20 @@ h1 {
     }
 
     h1 {
-        font-size: 32px;
+        font-size: 33px;
     }
 
     .grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 24px;
     }
 
-    .image-wrap {
-        height: 330px;
+    .project-info {
+        padding: 21px;
     }
 
-    .intro {
-        gap: 12px;
+    .project h2 {
+        font-size: 21px;
     }
 
     .footer-note {
@@ -235,9 +266,9 @@ h1 {
         </div>
 
         <a class="document-link"
-           href="./创意设计作品集介绍及视频链接.docx"
+           href="./%E5%88%9B%E6%84%8F%E8%AE%BE%E8%AE%A1%E4%BD%9C%E5%93%81%E9%9B%86%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%A7%86%E9%A2%91%E9%93%BE%E6%8E%A5.docx"
            target="_blank">
-           Portfolio Documents ↗
+           查看完整作品集介绍及视频链接 ↗
         </a>
     </header>
 
@@ -247,67 +278,146 @@ h1 {
         <strong>04 / PROJECTS</strong>
     </div>
 
-    <!-- Project Grid -->
     <div class="grid">
 
-        <!-- Project 01 -->
+        <!-- Project 01: Plastic Symbiosis -->
         <article class="project">
+
             <div class="image-wrap">
-                <img src="./《塑料共生》.jpg" alt="Plastic Symbiosis">
+                <a href="./%E3%80%8A%E5%A1%91%E6%96%99%E5%85%B1%E7%94%9F%E3%80%8B.jpg"
+                   target="_blank">
+                    <img src="./%E3%80%8A%E5%A1%91%E6%96%99%E5%85%B1%E7%94%9F%E3%80%8B.jpg"
+                         alt="Plastic Symbiosis">
+                </a>
             </div>
+
             <div class="project-info">
                 <div class="project-top">
                     <span class="number">01 / 04</span>
                     <span class="category">CREATIVE DESIGN</span>
                 </div>
+
                 <h2>Plastic Symbiosis</h2>
-                <p>塑料共生 · 探索人与塑料环境之间的共生关系</p>
+
+                <p class="description">
+                    一个围绕塑料污染与可持续材料展开的跨媒介设计项目。
+                    项目以海洋塑料污染为背景，通过实验探索海藻酸钠等生物材料替代传统塑料的可能性，并将材料实验延伸至可穿戴装置、手工首饰、服装和食物设计。
+                    <strong>使用 Blender/C4D 进行可穿戴装置与首饰的3D建模及视觉设计</strong>，
+                    结合实体材料实验完成服装、首饰与食物原型制作，并通过
+                    <strong>PS、AI</strong> 完成视觉设计与项目展板排版。
+                    最终构建人与生物材料共生的未来生活场景，以“可食用、可降解、可再生”的材料想象重新思考塑料的生命周期，以及未来人与自然、材料之间的关系。
+                </p>
+
+                <a class="video-link"
+                   href="https://t.bilibili.com/1269839499504910358?share_source=pc_native"
+                   target="_blank">
+                   观看项目视频 ↗
+                </a>
             </div>
         </article>
 
-        <!-- Project 02 -->
+        <!-- Project 02: Yard Narration -->
         <article class="project">
+
             <div class="image-wrap">
-                <img src="./《庭院叙事》.jpg" alt="Yard Narration">
+                <a href="./%E3%80%8A%E5%BA%AD%E9%99%A2%E5%8F%99%E4%BA%8B%E3%80%8B.jpg"
+                   target="_blank">
+                    <img src="./%E3%80%8A%E5%BA%AD%E9%99%A2%E5%8F%99%E4%BA%8B%E3%80%8B.jpg"
+                         alt="Yard Narration">
+                </a>
             </div>
+
             <div class="project-info">
                 <div class="project-top">
                     <span class="number">02 / 04</span>
-                    <span class="category">VISUAL STORYTELLING</span>
+                    <span class="category">IMMERSIVE DESIGN</span>
                 </div>
+
                 <h2>Yard Narration</h2>
-                <p>庭院叙事 · 通过空间与视觉构建叙事体验</p>
+
+                <p class="description">
+                    一个以家庭记忆、代际关系与情感疗愈为主题的沉浸式交互项目。
+                    项目从童年时期对祖父母家庭院的个人记忆出发，通过3D扫描庭院、厨房等真实空间，
+                    <strong>并使用 Blender/C4D 处理扫描模型与空间场景，结合 TouchDesigner、Arduino、声音采集与热敏打印装置</strong>，
+                    将家庭成员的生活痕迹与旧照片、文字和声音重新组合，将祖父母讲述的故事实时打印成不断延伸的纸张，并将纸张构成具有沉浸感的空间。
+                    同时使用 PS、PR 完成项目视觉设计与影像制作，让观众在真实与记忆交错的环境中重新体验家庭故事，探索数字技术如何保存和传递私人记忆。
+                </p>
+
+                <a class="video-link"
+                   href="https://t.bilibili.com/1269839765812805640?share_source=pc_native"
+                   target="_blank">
+                   观看项目视频 ↗
+                </a>
             </div>
         </article>
 
-        <!-- Project 03 -->
+        <!-- Project 03: Tear Fragrance Laboratory -->
         <article class="project">
+
             <div class="image-wrap">
-                <img src="./《眼泪香氛实验室》.jpg"
-                     alt="Tear Fragrance Laboratory">
+                <a href="./%E3%80%8A%E7%9C%BC%E6%B3%AA%E9%A6%99%E6%B0%9B%E5%AE%9E%E9%AA%8C%E5%AE%A4%E3%80%8B.jpg"
+                   target="_blank">
+                    <img src="./%E3%80%8A%E7%9C%BC%E6%B3%AA%E9%A6%99%E6%B0%9B%E5%AE%9E%E9%AA%8C%E5%AE%A4%E3%80%8B.jpg"
+                         alt="Tear Fragrance Laboratory">
+                </a>
             </div>
+
             <div class="project-info">
                 <div class="project-top">
                     <span class="number">03 / 04</span>
                     <span class="category">INTERACTIVE DESIGN</span>
                 </div>
+
                 <h2>Tear Fragrance Laboratory</h2>
-                <p>眼泪香氛实验室 · 探索情绪与感官体验的交互设计</p>
+
+                <p class="description">
+                    以“眼泪与情绪之间的关系”为主题的交互式装置项目。
+                    项目通过研究不同情绪状态下眼泪的成分与形态，将悲伤、压力、愤怒等抽象情绪转化为可被观察和感知的视觉语言，并进一步提取眼泪中的成分进行气味实验。
+                    <strong>使用 Blender/C4D 进行3D建模与装置视觉设计</strong>，
+                    结合 <strong>Arduino 自动化装置实现交互功能</strong>，
+                    并通过 PS、AI 完成视觉海报与信息排版，将参与者的情绪转化为不同的“泪水香氛”，探索情绪如何通过视觉、嗅觉和身体互动被重新表达。
+                </p>
+
+                <a class="video-link"
+                   href="https://t.bilibili.com/1269838520250269703?share_source=pc_native"
+                   target="_blank">
+                   观看项目视频 ↗
+                </a>
             </div>
         </article>
 
-        <!-- Project 04 -->
+        <!-- Project 04: Virtual Space -->
         <article class="project">
+
             <div class="image-wrap">
-                <img src="./《虚拟空间》.jpg" alt="Virtual Space">
+                <a href="./%E3%80%8A%E8%99%9A%E6%8B%9F%E7%A9%BA%E9%97%B4%E3%80%8B.jpg"
+                   target="_blank">
+                    <img src="./%E3%80%8A%E8%99%9A%E6%8B%9F%E7%A9%BA%E9%97%B4%E3%80%8B.jpg"
+                         alt="Virtual Space">
+                </a>
             </div>
+
             <div class="project-info">
                 <div class="project-top">
                     <span class="number">04 / 04</span>
                     <span class="category">3D VISUAL DESIGN</span>
                 </div>
+
                 <h2>Virtual Space</h2>
-                <p>虚拟空间 · 3D 建模与数字空间视觉探索</p>
+
+                <p class="description">
+                    一个关于后人类社会与劳动分工的
+                    <strong>3D视觉叙事项目</strong>。
+                    项目以资本主义社会中的阶级分化和劳动不平等为切入点，构想一个未来机械高度介入的社会：人类与机械共同承担农业、工业、商业、教育、家庭等不同类型的劳动。
+                    <strong>使用 Blender/C4D 完成未来城市场景搭建、机械角色建模与视觉呈现，并通过 PS、AI 完成概念视觉设计与项目展板排版</strong>，
+                    构建具有乌托邦与反乌托邦双重特征的未来城市，并思考当技术取代大量人类劳动后，社会结构、职业价值以及人与机器之间的关系将如何改变。
+                </p>
+
+                <a class="video-link"
+                   href="https://t.bilibili.com/1269839843087613954?share_source=pc_native"
+                   target="_blank">
+                   观看项目视频 ↗
+                </a>
             </div>
         </article>
 
@@ -316,7 +426,7 @@ h1 {
     <!-- Footer -->
     <footer class="footer">
         <a class="back" href="../../index.html">
-            ← Back to Home
+            ← 返回首页
         </a>
         <span class="footer-note">XINYAO HU · PORTFOLIO</span>
     </footer>
