@@ -5,33 +5,264 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VR Portfolio | Xinyao Hu</title>
+
 <style>
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
 body {
-  padding: 40px;
-  max-width: 1000px;
-  margin: 0 auto;
-  background: #f4f4f4;
-  font-family: system-ui, sans-serif;
+    background: #f4f4f4;
+    font-family: system-ui, sans-serif;
+    color: #222;
+    padding: 55px 25px;
 }
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.header {
+    margin-bottom: 45px;
+}
+
 h1 {
-  margin-bottom: 24px;
+    font-size: 38px;
+    margin-bottom: 12px;
 }
-a {
-  display: inline-block;
-  margin-top: 30px;
-  color: #222;
-  font-size: 18px;
+
+.subtitle {
+    color: #777;
+    font-size: 17px;
+}
+
+.project {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    transition: transform 0.25s;
+}
+
+.project:hover {
+    transform: translateY(-4px);
+}
+
+.visual {
+    min-height: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+    color: white;
+    text-align: center;
+}
+
+.visual-one {
+    background: linear-gradient(135deg, #17202e, #52647b);
+}
+
+.visual-two {
+    background: linear-gradient(135deg, #25334b, #8795a8);
+}
+
+.visual h2 {
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+.visual span {
+    display: block;
+    font-size: 13px;
+    margin-top: 12px;
+    opacity: 0.8;
+    letter-spacing: 3px;
+}
+
+.info {
+    padding: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.number {
+    color: #999;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.info h2 {
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.info p {
+    color: #666;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 22px;
+}
+
+.tags span {
+    padding: 6px 12px;
+    background: #f1f1f1;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #666;
+}
+
+.doc-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: #222;
+    font-size: 14px;
+    text-decoration: none;
+    border-bottom: 1px solid #222;
+    padding-bottom: 4px;
+    width: fit-content;
+}
+
+.doc-link:hover {
+    color: #777;
+}
+
+.back {
+    display: inline-block;
+    margin-top: 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.back:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+    .project {
+        grid-template-columns: 1fr;
+    }
+
+    .visual {
+        min-height: 230px;
+    }
+
+    .info {
+        padding: 28px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
 }
 </style>
 </head>
+
 <body>
-<h1>VR Portfolio</h1>
-<p>这里放你的VR作品内容</p>
-<a href="../../index.html">← 返回首页</a>
+
+<div class="container">
+
+    <div class="header">
+        <h1>VR Portfolio</h1>
+        <p class="subtitle">
+            Immersive Experiences | Virtual Reality | Interactive Storytelling
+        </p>
+    </div>
+
+    <!-- Project 01 -->
+    <div class="project">
+
+        <div class="visual visual-one">
+            <div>
+                <h2>RUN INTO DARK</h2>
+                <span>VR SURVIVAL EXPERIENCE</span>
+            </div>
+        </div>
+
+        <div class="info">
+            <div class="number">PROJECT 01</div>
+
+            <h2>Run into Dark</h2>
+
+            <p>
+                A VR survival experience inspired by the extraordinary
+                true story of Aimo Koivunen. Through immersive
+                environments and spatial storytelling, the project
+                explores survival, isolation and human endurance
+                in extreme conditions.
+            </p>
+
+            <div class="tags">
+                <span>VR Experience</span>
+                <span>3D Modelling</span>
+                <span>Environment Design</span>
+                <span>Immersive Storytelling</span>
+            </div>
+
+            <a class="doc-link" href="./Run%20into%20dark.docx">
+                View Project Document →
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Project 02 -->
+    <div class="project">
+
+        <div class="visual visual-two">
+            <div>
+                <h2>TAILS OF WISHES</h2>
+                <span>VR INTERACTIVE EXPERIENCE</span>
+            </div>
+        </div>
+
+        <div class="info">
+            <div class="number">PROJECT 02</div>
+
+            <h2>Tails of Wishes</h2>
+
+            <p>
+                An immersive VR interactive project exploring kite
+                culture and personal stories across China, Japan
+                and Gaza. Through virtual interaction and collecting
+                fragments of text, participants create their own
+                poetic kite tails, connecting cultural memories,
+                wishes and stories.
+            </p>
+
+            <div class="tags">
+                <span>VR Interaction</span>
+                <span>360° Video</span>
+                <span>Blender</span>
+                <span>Interactive Poetry</span>
+            </div>
+
+            <a class="doc-link" href="./Tails%20of%20wishes.docx">
+                View Project Document →
+            </a>
+        </div>
+
+    </div>
+
+    <a class="back" href="../../index.html">
+        ← Back to Home
+    </a>
+
+</div>
+
 </body>
 </html>
