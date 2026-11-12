@@ -5,33 +5,156 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Design Portfolio | Xinyao Hu</title>
+
 <style>
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
 body {
-  padding: 40px;
-  max-width: 1000px;
-  margin: 0 auto;
-  background: #f4f4f4;
-  font-family: system-ui, sans-serif;
+    background: #f4f4f4;
+    font-family: system-ui, sans-serif;
+    color: #222;
+    padding: 55px 25px;
 }
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.header {
+    margin-bottom: 45px;
+}
+
 h1 {
-  margin-bottom: 24px;
+    font-size: 38px;
+    margin-bottom: 12px;
 }
-a {
-  display: inline-block;
-  margin-top: 30px;
-  color: #222;
-  font-size: 18px;
+
+.subtitle {
+    color: #777;
+    font-size: 17px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.project {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    transition: transform 0.25s;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+}
+
+.project img {
+    display: block;
+    width: 100%;
+    height: 520px;
+    object-fit: contain;
+    background: #eeeeee;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project h2 {
+    font-size: 21px;
+    margin-bottom: 7px;
+}
+
+.project p {
+    color: #888;
+    font-size: 14px;
+}
+
+.back {
+    display: inline-block;
+    margin-top: 45px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.back:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .project img {
+        height: 450px;
+    }
 }
 </style>
 </head>
+
 <body>
-<h1>Design Portfolio</h1>
-<p>这里放你的作品集内容</p>
-<a href="../../index.html">← 返回首页</a>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Design Portfolio</h1>
+        <p class="subtitle">Selected Creative Projects | Xinyao Hu</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="project">
+            <img src="《塑料共生》.jpg" alt="塑料共生">
+            <div class="project-info">
+                <h2>Plastic Symbiosis</h2>
+                <p>塑料共生 · Creative Design</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="《庭院叙事》.jpg" alt="庭院叙事">
+            <div class="project-info">
+                <h2>Yard Narration</h2>
+                <p>庭院叙事 · Visual Storytelling</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="《眼泪香氛实验室》.jpg" alt="眼泪香氛实验室">
+            <div class="project-info">
+                <h2>Tear Fragrance Laboratory</h2>
+                <p>眼泪香氛实验室 · Interactive Design</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="《虚拟空间》.jpg" alt="虚拟空间">
+            <div class="project-info">
+                <h2>Virtual Space</h2>
+                <p>虚拟空间 · 3D Visual Design</p>
+            </div>
+        </div>
+
+    </div>
+
+    <a class="back" href="../../index.html">← Back to Home</a>
+
+</div>
+
 </body>
 </html>
