@@ -14,94 +14,207 @@
 }
 
 body {
-    background: #f4f4f4;
-    font-family: system-ui, sans-serif;
+    background: #f5f5f3;
     color: #222;
-    padding: 55px 25px;
+    font-family: Arial, "Microsoft YaHei", sans-serif;
+    padding: 55px 30px;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1160px;
     margin: auto;
 }
 
+/* Header */
 .header {
-    margin-bottom: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 25px;
+    margin-bottom: 35px;
 }
 
-h1 {
-    font-size: 38px;
+.eyebrow {
+    font-size: 12px;
+    color: #999;
+    letter-spacing: 3px;
     margin-bottom: 12px;
 }
 
-.subtitle {
-    color: #777;
-    font-size: 17px;
+h1 {
+    font-size: 42px;
+    font-weight: 650;
+    letter-spacing: -1.5px;
 }
 
+.subtitle {
+    color: #888;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.document-link {
+    display: inline-block;
+    padding: 13px 19px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: #222;
+    text-decoration: none;
+    font-size: 13px;
+    white-space: nowrap;
+    transition: all .2s;
+}
+
+.document-link:hover {
+    background: #222;
+    color: white;
+}
+
+/* Intro */
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+    margin-bottom: 28px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    color: #777;
+    font-size: 13px;
+}
+
+.intro strong {
+    color: #222;
+    font-size: 14px;
+}
+
+/* Projects */
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
 }
 
 .project {
     background: white;
-    border-radius: 12px;
+    border-radius: 9px;
     overflow: hidden;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-    transition: transform 0.25s;
+    box-shadow: 0 2px 12px rgba(0,0,0,.045);
+    transition: transform .25s, box-shadow .25s;
 }
 
 .project:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(0,0,0,.09);
 }
 
-.project img {
-    display: block;
-    width: 100%;
-    height: 520px;
+.image-wrap {
+    height: 350px;
+    background: #eeedea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+}
+
+.image-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
     object-fit: contain;
-    background: #eeeeee;
+    display: block;
 }
 
 .project-info {
-    padding: 20px;
+    padding: 19px 21px 21px;
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.number {
+    font-size: 11px;
+    color: #999;
+    letter-spacing: 2px;
+}
+
+.category {
+    font-size: 11px;
+    color: #888;
 }
 
 .project h2 {
-    font-size: 21px;
+    font-size: 20px;
+    font-weight: 600;
     margin-bottom: 7px;
 }
 
 .project p {
+    font-size: 13px;
     color: #888;
-    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    margin-top: 38px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .back {
-    display: inline-block;
-    margin-top: 45px;
-    color: #333;
+    color: #444;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 13px;
 }
 
 .back:hover {
     text-decoration: underline;
 }
 
+.footer-note {
+    color: #aaa;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
 @media (max-width: 700px) {
-    .grid {
-        grid-template-columns: 1fr;
+    body {
+        padding: 35px 18px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     h1 {
-        font-size: 30px;
+        font-size: 32px;
     }
 
-    .project img {
-        height: 450px;
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .image-wrap {
+        height: 330px;
+    }
+
+    .intro {
+        gap: 12px;
+    }
+
+    .footer-note {
+        display: none;
     }
 }
 </style>
@@ -111,48 +224,102 @@ h1 {
 
 <div class="container">
 
-    <div class="header">
-        <h1>Design Portfolio</h1>
-        <p class="subtitle">Selected Creative Projects | Xinyao Hu</p>
+    <!-- Header -->
+    <header class="header">
+        <div>
+            <div class="eyebrow">SELECTED WORKS / 2023—2026</div>
+            <h1>Design Portfolio</h1>
+            <p class="subtitle">
+                Creative Design · Visual Storytelling · 3D Art
+            </p>
+        </div>
+
+        <a class="document-link"
+           href="./创意设计作品集介绍及视频链接.docx"
+           target="_blank">
+           Portfolio Documents ↗
+        </a>
+    </header>
+
+    <!-- Introduction -->
+    <div class="intro">
+        <span>Selected Creative Projects</span>
+        <strong>04 / PROJECTS</strong>
     </div>
 
+    <!-- Project Grid -->
     <div class="grid">
 
-        <div class="project">
-            <img src="《塑料共生》.jpg" alt="塑料共生">
+        <!-- Project 01 -->
+        <article class="project">
+            <div class="image-wrap">
+                <img src="./《塑料共生》.jpg" alt="Plastic Symbiosis">
+            </div>
             <div class="project-info">
+                <div class="project-top">
+                    <span class="number">01 / 04</span>
+                    <span class="category">CREATIVE DESIGN</span>
+                </div>
                 <h2>Plastic Symbiosis</h2>
-                <p>塑料共生 · Creative Design</p>
+                <p>塑料共生 · 探索人与塑料环境之间的共生关系</p>
             </div>
-        </div>
+        </article>
 
-        <div class="project">
-            <img src="《庭院叙事》.jpg" alt="庭院叙事">
+        <!-- Project 02 -->
+        <article class="project">
+            <div class="image-wrap">
+                <img src="./《庭院叙事》.jpg" alt="Yard Narration">
+            </div>
             <div class="project-info">
+                <div class="project-top">
+                    <span class="number">02 / 04</span>
+                    <span class="category">VISUAL STORYTELLING</span>
+                </div>
                 <h2>Yard Narration</h2>
-                <p>庭院叙事 · Visual Storytelling</p>
+                <p>庭院叙事 · 通过空间与视觉构建叙事体验</p>
             </div>
-        </div>
+        </article>
 
-        <div class="project">
-            <img src="《眼泪香氛实验室》.jpg" alt="眼泪香氛实验室">
+        <!-- Project 03 -->
+        <article class="project">
+            <div class="image-wrap">
+                <img src="./《眼泪香氛实验室》.jpg"
+                     alt="Tear Fragrance Laboratory">
+            </div>
             <div class="project-info">
+                <div class="project-top">
+                    <span class="number">03 / 04</span>
+                    <span class="category">INTERACTIVE DESIGN</span>
+                </div>
                 <h2>Tear Fragrance Laboratory</h2>
-                <p>眼泪香氛实验室 · Interactive Design</p>
+                <p>眼泪香氛实验室 · 探索情绪与感官体验的交互设计</p>
             </div>
-        </div>
+        </article>
 
-        <div class="project">
-            <img src="《虚拟空间》.jpg" alt="虚拟空间">
-            <div class="project-info">
-                <h2>Virtual Space</h2>
-                <p>虚拟空间 · 3D Visual Design</p>
+        <!-- Project 04 -->
+        <article class="project">
+            <div class="image-wrap">
+                <img src="./《虚拟空间》.jpg" alt="Virtual Space">
             </div>
-        </div>
+            <div class="project-info">
+                <div class="project-top">
+                    <span class="number">04 / 04</span>
+                    <span class="category">3D VISUAL DESIGN</span>
+                </div>
+                <h2>Virtual Space</h2>
+                <p>虚拟空间 · 3D 建模与数字空间视觉探索</p>
+            </div>
+        </article>
 
     </div>
 
-    <a class="back" href="../../index.html">← Back to Home</a>
+    <!-- Footer -->
+    <footer class="footer">
+        <a class="back" href="../../index.html">
+            ← Back to Home
+        </a>
+        <span class="footer-note">XINYAO HU · PORTFOLIO</span>
+    </footer>
 
 </div>
 
