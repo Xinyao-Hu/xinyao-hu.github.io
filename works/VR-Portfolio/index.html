@@ -22,6 +22,7 @@ body {
 
 .container {
     max-width: 1200px;
+    width: 100%;
     margin: auto;
 }
 
@@ -74,12 +75,13 @@ h1 {
 
 .project {
     display: grid;
-    grid-template-columns: 38% 62%;
+    grid-template-columns: 40% minmax(0, 60%);
     background: white;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 2px 12px rgba(0,0,0,.05);
     transition: transform .25s, box-shadow .25s;
+    min-width: 0;
 }
 
 .project:hover {
@@ -87,75 +89,85 @@ h1 {
     box-shadow: 0 8px 22px rgba(0,0,0,.09);
 }
 
-/* Visual Covers */
+/* Image Covers */
 .visual {
     min-height: 460px;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 35px;
     color: white;
     overflow: hidden;
-    position: relative;
+    min-width: 0;
 }
 
-.visual-one {
-    background:
-        radial-gradient(ellipse at 75% 25%, rgba(151,169,190,.35), transparent 40%),
-        linear-gradient(145deg, #101a29, #34455a 55%, #111c2b);
+.cover-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+    transition: transform .5s;
 }
 
-.visual-two {
-    background:
-        radial-gradient(ellipse at 70% 30%, rgba(164,182,214,.4), transparent 42%),
-        linear-gradient(145deg, #20263a, #53647c 55%, #172234);
+.project:hover .cover-image {
+    transform: scale(1.035);
 }
 
 .visual::after {
     content: "";
     position: absolute;
-    width: 300px;
-    height: 300px;
-    border: 1px solid rgba(255,255,255,.17);
-    border-radius: 50%;
-    right: -100px;
-    bottom: -100px;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(10,17,30,.30),
+        rgba(10,17,30,.18) 45%,
+        rgba(10,17,30,.58)
+    );
+    z-index: 1;
+}
+
+.visual-top,
+.visual-main,
+.visual-bottom {
+    position: relative;
+    z-index: 2;
 }
 
 .visual-top {
     font-size: 11px;
     letter-spacing: 3px;
-    color: rgba(255,255,255,.65);
-    position: relative;
-    z-index: 1;
+    color: rgba(255,255,255,.85);
 }
 
 .visual-main {
-    position: relative;
-    z-index: 1;
+    text-align: center;
 }
 
 .visual-main .cn {
     display: block;
     font-size: 37px;
-    font-weight: 600;
+    font-weight: 650;
     letter-spacing: 3px;
     margin-bottom: 12px;
+    text-shadow: 0 2px 12px rgba(0,0,0,.4);
 }
 
 .visual-main .en {
     display: block;
     font-size: 14px;
     letter-spacing: 3px;
-    color: rgba(255,255,255,.75);
+    color: rgba(255,255,255,.9);
+    text-shadow: 0 2px 8px rgba(0,0,0,.4);
 }
 
 .visual-bottom {
     font-size: 11px;
     letter-spacing: 2px;
-    color: rgba(255,255,255,.6);
-    position: relative;
-    z-index: 1;
+    color: rgba(255,255,255,.8);
 }
 
 /* Project Information */
@@ -164,12 +176,14 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-width: 0;
 }
 
 .project-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 12px;
     margin-bottom: 16px;
 }
 
@@ -190,6 +204,7 @@ h1 {
     font-weight: 600;
     margin-bottom: 20px;
     line-height: 1.5;
+    overflow-wrap: anywhere;
 }
 
 .project h2 span {
@@ -271,7 +286,7 @@ h1 {
     }
 
     .visual {
-        min-height: 280px;
+        min-height: 330px;
         padding: 28px;
     }
 
@@ -318,7 +333,11 @@ h1 {
         <!-- Project 01: Run into Dark -->
         <article class="project">
 
-            <div class="visual visual-one">
+            <div class="visual">
+                <img class="cover-image"
+                     src="./run-into-dark.jpg"
+                     alt="奔赴暗夜 VR 雪地场景">
+
                 <div class="visual-top">
                     PROJECT 01 / VR EXPERIENCE
                 </div>
@@ -337,7 +356,7 @@ h1 {
 
                 <div class="project-top">
                     <span class="number">01 / 02</span>
-                    <span class="category">VR 交互体验</span>
+                    <span class="category">VR 生存体验</span>
                 </div>
 
                 <h2>
@@ -362,7 +381,11 @@ h1 {
         <!-- Project 02: Tails of Wishes -->
         <article class="project">
 
-            <div class="visual visual-two">
+            <div class="visual">
+                <img class="cover-image"
+                     src="./tails-of-wishes.jpg"
+                     alt="愿望之尾 VR 风筝场景">
+
                 <div class="visual-top">
                     PROJECT 02 / VR EXPERIENCE
                 </div>

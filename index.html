@@ -14,90 +14,114 @@
 }
 
 body {
-    background: #f4f4f4;
-    padding: 60px 20px;
-    font-family: system-ui, sans-serif;
+    background: #f5f5f3;
+    color: #222;
+    font-family: Arial, "Microsoft YaHei", sans-serif;
+    padding: 65px 30px;
 }
 
 .container {
-    max-width: 1100px;
-    margin: 0 auto;
+    max-width: 1200px;
+    margin: auto;
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 42px;
+    font-weight: 650;
+    letter-spacing: -1px;
     margin-bottom: 12px;
-    color: #222;
 }
 
-.desc {
-    color: #666;
-    margin-bottom: 48px;
-    font-size: 18px;
+.subtitle {
+    color: #777;
+    font-size: 19px;
+    margin-bottom: 50px;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
 }
 
 .card {
+    display: block;
     background: white;
-    border-radius: 12px;
+    border-radius: 13px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-decoration: none;
+    color: #222;
+    box-shadow: 0 3px 15px rgba(0,0,0,.07);
+    transition: transform .25s, box-shadow .25s;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-}
-
-.card a {
-    display: block;
-    text-decoration: none;
-    color: #222;
+    box-shadow: 0 10px 25px rgba(0,0,0,.12);
 }
 
 .card-img {
     width: 100%;
-    height: 260px;
-    background: #e8e8e8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #999;
-    font-size: 16px;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #e9e9e9;
 }
 
-.card .info {
-    padding: 20px;
+.card-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s;
 }
 
-.card h3 {
-    font-size: 22px;
-    font-weight: 600;
+.card:hover .card-img img {
+    transform: scale(1.035);
 }
 
-.card p {
-    margin-top: 8px;
-    font-size: 14px;
+.info {
+    padding: 22px 24px 25px;
+}
+
+.info h2 {
+    font-size: 25px;
+    margin-bottom: 9px;
+    font-weight: 650;
+}
+
+.info p {
     color: #888;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
-@media (max-width: 600px) {
+.arrow {
+    display: inline-block;
+    margin-top: 13px;
+    font-size: 13px;
+    color: #444;
+}
+
+@media(max-width: 750px) {
     body {
         padding: 35px 18px;
     }
 
     h1 {
-        font-size: 28px;
+        font-size: 32px;
+    }
+
+    .subtitle {
+        margin-bottom: 30px;
     }
 
     .grid {
         grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .info h2 {
+        font-size: 22px;
     }
 }
 </style>
@@ -108,35 +132,41 @@ h1 {
 <div class="container">
 
     <h1>Xinyao Hu | Portfolio</h1>
-    <p class="desc">Design Works</p>
+    <p class="subtitle">Design Works & Immersive Experiences</p>
 
     <div class="grid">
 
         <!-- Design Portfolio -->
-        <div class="card">
-            <a href="./works/Design-Portfolio/index.html">
-                <div class="card-img">
-                    Design Portfolio
-                </div>
-                <div class="info">
-                    <h3>Design Portfolio</h3>
-                    <p>Creative Design & Visual Projects</p>
-                </div>
-            </a>
-        </div>
+        <a class="card" href="works/Design-Portfolio/index.html">
+
+            <div class="card-img">
+                <img src="covers/design-cover.jpg"
+                     alt="设计作品集封面">
+            </div>
+
+            <div class="info">
+                <h2>设计作品集</h2>
+                <p>创意设计 · 视觉叙事 · 三维艺术</p>
+                <span class="arrow">查看作品集 ↗</span>
+            </div>
+
+        </a>
 
         <!-- VR Portfolio -->
-        <div class="card">
-            <a href="./works/VR-Portfolio/index.html">
-                <div class="card-img">
-                    VR Portfolio
-                </div>
-                <div class="info">
-                    <h3>VR Portfolio</h3>
-                    <p>Immersive Experiences & VR Projects</p>
-                </div>
-            </a>
-        </div>
+        <a class="card" href="works/VR-Portfolio/index.html">
+
+            <div class="card-img">
+                <img src="covers/vr-cover.jpg"
+                     alt="VR沉浸式作品集封面">
+            </div>
+
+            <div class="info">
+                <h2>VR 沉浸式作品集</h2>
+                <p>虚拟现实 · 沉浸式交互 · 互动叙事</p>
+                <span class="arrow">查看作品集 ↗</span>
+            </div>
+
+        </a>
 
     </div>
 
