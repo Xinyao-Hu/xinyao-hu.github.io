@@ -4,34 +4,415 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VR Portfolio | Xinyao Hu</title>
+<title>VR沉浸式作品集 | 胡心瑶</title>
+
 <style>
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
 body {
-  padding: 40px;
-  max-width: 1000px;
-  margin: 0 auto;
-  background: #f4f4f4;
-  font-family: system-ui, sans-serif;
+    background: #f5f5f3;
+    color: #222;
+    font-family: Arial, "Microsoft YaHei", sans-serif;
+    padding: 55px 30px;
 }
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Header */
+.header {
+    margin-bottom: 35px;
+}
+
+.eyebrow {
+    font-size: 12px;
+    color: #999;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
 h1 {
-  margin-bottom: 24px;
+    font-size: 42px;
+    font-weight: 650;
+    letter-spacing: -1.5px;
 }
-a {
-  display: inline-block;
-  margin-top: 30px;
-  color: #222;
-  font-size: 18px;
+
+.subtitle {
+    color: #888;
+    font-size: 15px;
+    margin-top: 12px;
+}
+
+/* Introduction */
+.intro {
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 0;
+    margin-bottom: 30px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    color: #777;
+    font-size: 14px;
+}
+
+.intro strong {
+    color: #222;
+}
+
+/* Projects */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.project {
+    display: grid;
+    grid-template-columns: 38% 62%;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,.05);
+    transition: transform .25s, box-shadow .25s;
+}
+
+.project:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(0,0,0,.09);
+}
+
+/* Visual Covers */
+.visual {
+    min-height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 35px;
+    color: white;
+    overflow: hidden;
+    position: relative;
+}
+
+.visual-one {
+    background:
+        radial-gradient(ellipse at 75% 25%, rgba(151,169,190,.35), transparent 40%),
+        linear-gradient(145deg, #101a29, #34455a 55%, #111c2b);
+}
+
+.visual-two {
+    background:
+        radial-gradient(ellipse at 70% 30%, rgba(164,182,214,.4), transparent 42%),
+        linear-gradient(145deg, #20263a, #53647c 55%, #172234);
+}
+
+.visual::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(255,255,255,.17);
+    border-radius: 50%;
+    right: -100px;
+    bottom: -100px;
+}
+
+.visual-top {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,.65);
+    position: relative;
+    z-index: 1;
+}
+
+.visual-main {
+    position: relative;
+    z-index: 1;
+}
+
+.visual-main .cn {
+    display: block;
+    font-size: 37px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.visual-main .en {
+    display: block;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,.75);
+}
+
+.visual-bottom {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,.6);
+    position: relative;
+    z-index: 1;
+}
+
+/* Project Information */
+.project-info {
+    padding: 38px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.number {
+    font-size: 11px;
+    color: #999;
+    letter-spacing: 2px;
+}
+
+.category {
+    font-size: 11px;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+.project h2 {
+    font-size: 27px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.project h2 span {
+    display: block;
+    color: #888;
+    font-size: 17px;
+    font-weight: 400;
+    margin-top: 2px;
+    letter-spacing: .5px;
+}
+
+.description {
+    color: #666;
+    font-size: 14px;
+    line-height: 2;
+    text-align: justify;
+}
+
+.description strong {
+    color: #222;
+    font-weight: 700;
+}
+
+.video-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: #222;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid #222;
+    padding-bottom: 6px;
+    width: fit-content;
+}
+
+.video-link:hover {
+    color: #888;
+    border-color: #888;
+}
+
+/* Footer */
+.footer {
+    margin-top: 45px;
+    padding-top: 22px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back {
+    color: #444;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back:hover {
+    text-decoration: underline;
+}
+
+.footer-note {
+    color: #aaa;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    body {
+        padding: 35px 18px;
+    }
+
+    h1 {
+        font-size: 33px;
+    }
+
+    .project {
+        grid-template-columns: 1fr;
+    }
+
+    .visual {
+        min-height: 280px;
+        padding: 28px;
+    }
+
+    .visual-main .cn {
+        font-size: 31px;
+    }
+
+    .project-info {
+        padding: 28px 23px;
+    }
+
+    .project h2 {
+        font-size: 23px;
+    }
+
+    .footer-note {
+        display: none;
+    }
 }
 </style>
 </head>
+
 <body>
-<h1>VR Portfolio</h1>
-<p>这里放你的VR作品内容</p>
-<a href="../../index.html">← 返回首页</a>
+
+<div class="container">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="eyebrow">SELECTED WORKS / 2023—2026</div>
+        <h1>VR 沉浸式作品集</h1>
+        <p class="subtitle">
+            虚拟现实 · 沉浸式交互 · 三维场景 · 互动叙事
+        </p>
+    </header>
+
+    <!-- Introduction -->
+    <div class="intro">
+        <span>精选 VR 交互项目</span>
+        <strong>02 / 项目</strong>
+    </div>
+
+    <div class="project-list">
+
+        <!-- Project 01: Run into Dark -->
+        <article class="project">
+
+            <div class="visual visual-one">
+                <div class="visual-top">
+                    PROJECT 01 / VR EXPERIENCE
+                </div>
+
+                <div class="visual-main">
+                    <span class="cn">奔赴暗夜</span>
+                    <span class="en">RUN INTO DARK</span>
+                </div>
+
+                <div class="visual-bottom">
+                    VR SURVIVAL EXPERIENCE
+                </div>
+            </div>
+
+            <div class="project-info">
+
+                <div class="project-top">
+                    <span class="number">01 / 02</span>
+                    <span class="category">VR 交互体验</span>
+                </div>
+
+                <h2>
+                    奔赴暗夜
+                    <span>Run into Dark</span>
+                </h2>
+
+                <p class="description">
+                    以芬兰士兵 Aimo Koivunen 二战期间滑雪求生的真实故事为灵感，设计一款反战主题的 VR 交互体验，通过滑雪、药丸加速、障碍躲避、昼夜变化、暴风雪以及芬兰语配音和环境音效，呈现战争中的生存困境。我主要负责<strong>环境搭建和 UI 设计</strong>，同时参与部分 <strong>Unity 交互开发与前期调研</strong>，利用 AI 工具辅助代码编写与调试，并通过多轮测试优化场景、交互和运行效果。项目完成了 14 天沉浸式体验，并取得课程前 5% 的成绩，获得导师认可，同时荣获多个国际设计赛事奖项。
+                </p>
+
+                <a class="video-link"
+                   href="https://t.bilibili.com/1269843738658603008?share_source=pc_native"
+                   target="_blank">
+                   观看项目视频 ↗
+                </a>
+
+            </div>
+        </article>
+
+
+        <!-- Project 02: Tails of Wishes -->
+        <article class="project">
+
+            <div class="visual visual-two">
+                <div class="visual-top">
+                    PROJECT 02 / VR EXPERIENCE
+                </div>
+
+                <div class="visual-main">
+                    <span class="cn">愿望之尾</span>
+                    <span class="en">TAILS OF WISHES</span>
+                </div>
+
+                <div class="visual-bottom">
+                    VR INTERACTIVE STORYTELLING
+                </div>
+            </div>
+
+            <div class="project-info">
+
+                <div class="project-top">
+                    <span class="number">02 / 02</span>
+                    <span class="category">VR 沉浸式交互</span>
+                </div>
+
+                <h2>
+                    愿望之尾
+                    <span>Tails of Wishes</span>
+                </h2>
+
+                <p class="description">
+                    Tails of Wishes《愿望之尾》是一款以风筝为媒介的 VR 沉浸式交互体验，结合中国、日本及加沙的真实故事，通过风筝飞行与文字收集机制，探索希望、自由与情感连接。项目中，我负责<strong>前期创意构思与资料调研，整理 30 余篇文献及案例</strong>，参与项目方案设计与 3 轮迭代；主要负责使用 <strong>Unity 进行 VR 场景搭建与核心交互设计</strong>，运用 <strong>Blender 进行三维模型制作</strong>，设计不同气流区域及其对风筝飞行轨迹和操控体验的影响，并主要负责<strong>风筝飞行、文字收集机制及 UI 界面的设计与整合</strong>。项目最终完成 VR 交互原型制作及课程展示，获评课程成绩前 5%，获得导师积极认可。
+                </p>
+
+                <a class="video-link"
+                   href="https://t.bilibili.com/1269844460214157321?share_source=pc_native"
+                   target="_blank">
+                   观看项目视频 ↗
+                </a>
+
+            </div>
+        </article>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a class="back" href="../../index.html">
+            ← 返回首页
+        </a>
+        <span class="footer-note">胡心瑶 · VR 作品集</span>
+    </footer>
+
+</div>
+
 </body>
 </html>
